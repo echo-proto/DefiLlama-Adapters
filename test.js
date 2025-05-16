@@ -17,7 +17,7 @@ const { util } = require("@defillama/sdk");
 const sdk = require("@defillama/sdk");
 const whitelistedExportKeys = require('./projects/helper/whitelistedExportKeys.json')
 const chainList = require('./projects/helper/chains.json')
-const { log, diplayUnknownTable, sliceIntoChunks } = require('./projects/helper/utils')
+const { log, displayUnknownTable, sliceIntoChunks } = require('./projects/helper/utils')
 const { normalizeAddress } = require('./projects/helper/tokenMapping')
 const { PromisePool } = require('@supercharge/promise-pool')
 
@@ -52,7 +52,7 @@ async function getTvl(
     let tvlBalances = await tvlFunction(api, ethBlock, chainBlocks, api);
     if (tvlBalances === undefined) tvlBalances = api.getBalances()
     const tvlResults = await computeTVL(tvlBalances, "now");
-    await diplayUnknownTable({ tvlResults, storedKey, tvlBalances, })
+    await displayUnknownTable({ tvlResults, storedKey, tvlBalances, })
     usdTvls[storedKey] = tvlResults.usdTvl;
     tokensBalances[storedKey] = tvlResults.tokenBalances;
     usdTokenBalances[storedKey] = tvlResults.usdTokenBalances;
