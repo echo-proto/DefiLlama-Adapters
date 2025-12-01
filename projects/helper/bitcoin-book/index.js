@@ -110,6 +110,7 @@ const tothemoon = require('./tothemoon.js')
 const indodax = require('./indodax.js')
 const river = require('./river.js')
 const echoMBTC = require('./echo-mBTC.js')
+const echoEBTC = require('./echo-eBTC.js')
 const xbtc = require('./okx-xbtc.js')
 const leadbtc = require('./leadbtc.js')
 const bitgetBtc = require('./bitget-bgBTC.js')
@@ -270,6 +271,7 @@ module.exports = {
   indodax,
   river,
   echoMBTC,
+  echoEBTC,
   xbtc,
   leadbtc,
   magicEden,
